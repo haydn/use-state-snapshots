@@ -1,0 +1,20 @@
+// @flow
+
+type Snapshot<T> = {
+  id: number,
+  state: T,
+  firstChange: number,
+  lastChange: number
+};
+
+declare module.exports: <T>(
+  initial: T | (() => T),
+  delay?: number | false,
+  limit?: number
+) => [
+  T,
+  (action: T | ((state: T) => T), force?: boolean) => void,
+  number,
+  (action: number | ((pointer: number) => number)) => void,
+  Array<Snapshot<T>>
+];
