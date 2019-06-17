@@ -8,9 +8,9 @@ Demo: https://codesandbox.io/s/peaceful-rgb-i6fuq
 
 - Drop-in replacement for [useState](https://reactjs.org/docs/hooks-reference.html#usestate) including support for [functional updates](https://reactjs.org/docs/hooks-reference.html#functional-updates) and [lazy initial state](https://reactjs.org/docs/hooks-reference.html#lazy-initial-state).
 - Three ways to track changes:
-  - Create a snapshot for every change.
-  - Create snapshots at regular intervals.
-  - Only create snapshots for specific changes.
+  - Automatically create new snapshots at regular intervals.
+  - Automatically create a snapshot for every single change to state.
+  - Only create snapshots for specific changes to state.
 - Snapshots include timestamps and ID's so you can display a timeline of changes.
 - Configurable limit for the number of snapshots to keep.
 - Flow and TypeScript declarations included.
@@ -18,20 +18,34 @@ Demo: https://codesandbox.io/s/peaceful-rgb-i6fuq
 
 ## Install
 
+NPM:
+
 ```shell
-yarn add useStateSnapshots
+npm install use-state-snapshots
+```
+
+Yarn:
+
+```shell
+yarn add use-state-snapshots
 ```
 
 ## Basic Usage
 
 ```js
 import React from "react";
-import useStateSnapshots from "useStateSnapshots";
+import useStateSnapshots from "use-state-snapshots";
 
 const MyComponent = () => {
   const [state, setState, pointer, setPointer] = useStateSnapshots("Hello");
   return (
     <div>
+      <textarea
+        value={state}
+        onChange={event => {
+          setState(event.target.value);
+        }}
+      />
       <button
         onClick={() => {
           setPointer(pointer - 1);
@@ -39,7 +53,13 @@ const MyComponent = () => {
       >
         Undo
       </button>
-      <textarea value={state} onChange={e => setState(e.target.value)} />
+      <button
+        onClick={() => {
+          setPointer(pointer + 1);
+        }}
+      >
+        Redo
+      </button>
     </div>
   );
 };
@@ -59,7 +79,7 @@ const [state, setState, pointer, setPointer, snapshots] = useStateSnapshots(
 
 Returns a list of snapshots, a pointer to the current snapshot, state derived from the current snapshot and functions for updating the state and setting the pointer.
 
-The `initialState` argument is that same as [useState](https://reactjs.org/docs/hooks-reference.html#usestate).
+The `initialState` argument is that same as the `initialState` argument that [useState](https://reactjs.org/docs/hooks-reference.html#usestate) takes.
 
 The `delay` argument is the number of milliseconds to wait before automatically creating a new snapshot. When set to `false` the automatic snapshots behaviour is disabled and when set to `0` a new snapshot will be created every time `setState` is called. Default value: `2000`.
 
