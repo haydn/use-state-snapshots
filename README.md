@@ -34,7 +34,7 @@ yarn add use-state-snapshots
 
 ## Basic Usage
 
-```js
+```jsx
 import React from "react";
 import useStateSnapshots from "use-state-snapshots";
 
@@ -79,9 +79,7 @@ const [state, setState, pointer, setPointer, snapshots] = useStateSnapshots(
 );
 ```
 
-Returns a list of snapshots, a pointer to the current snapshot, state derived from the current snapshot and functions for updating the state and setting the pointer.
-
-The `initialState` argument is that same as the `initialState` argument that [useState](https://reactjs.org/docs/hooks-reference.html#usestate) takes.
+The `initialState` argument and the `state` value behave exactly as they do for the [useState](https://reactjs.org/docs/hooks-reference.html#usestate) hook.
 
 The `delay` argument is the number of milliseconds to wait before automatically creating a new snapshot. When set to `false` the automatic snapshots behaviour is disabled and when set to `0` a new snapshot will be created every time `setState` is called. Default value: `2000`.
 
@@ -93,7 +91,7 @@ const { id, state, firstChange, lastChange } = snapshots[pointer];
 
 The `pointer` value returned is the index of the current snapshot in `snapshots`.
 
-(generated with `Date.now()`)
+Along with `state` each snapshot has a unique `id` as well as `firstChange` and `lastChange` timestamps indicating when the earliest and most recent changes in that snapshot occurred (these are generated with `Date.now()`).
 
 ### setState
 
@@ -101,15 +99,15 @@ The `pointer` value returned is the index of the current snapshot in `snapshots`
 setState(newState, forceSnapshot);
 ```
 
-The `setState` function works just like the [useState](https://reactjs.org/docs/hooks-reference.html#usestate) version, with the exception of an additional `forceSnapshot` argument. When the `forceSnapshot` argument is true a new snapshot will be created irrespective of the amount of time since the last snapshot was created.
+The `setState` function works just as described in the [useState](https://reactjs.org/docs/hooks-reference.html#usestate) documentation, with the exception of an additional `forceSnapshot` argument. When the `forceSnapshot` argument is `true` a new snapshot will be created irrespective of the amount of time that has passed since the last snapshot was created.
 
-## setPointer
+### setPointer
 
 ```js
 setPointer(index);
 ```
 
-The `index` argument is the index of the snapshot you want to restore in the `snapshots` list. If a value less than 0 or greater than the list length is provide it will be automatically clamped to the lowest (`0`) or highest (`snapshots.length - 1`) allowed value.
+The `index` argument is the index of the snapshot the `snapshots` list you want to restore. If a value less than 0 or greater than the length of the snapshots list it will be automatically clamped to the lowest (`0`) or highest (`snapshots.length - 1`) allowed value.
 
 ## Functional Updates
 
