@@ -2,6 +2,8 @@
 
 A React hook to keep track of state changes for undo/redo functionality.
 
+![](./screenshot.png)
+
 Demo: https://codesandbox.io/s/peaceful-rgb-i6fuq
 
 ## Features
