@@ -114,6 +114,14 @@ The `index` argument is the index of the snapshot the `snapshots` list you want 
 Both `setState` and `setPointer` accept functional updates as explained in
 the [useState documentation](https://reactjs.org/docs/hooks-reference.html#functional-updates).
 
+## Alternatives
+
+- [use-state-history](https://github.com/carlomartinucci/use-state-history) by [@carlomartinucci](https://github.com/carlomartinucci)
+- [use-undo](https://github.com/xxhomey19/use-undo) by [@xxhomey19](https://github.com/xxhomey19)
+- [useHistory](https://codesandbox.io/s/yv3004lqnj) by [@juice49](https://github.com/juice49)
+- [useHistory](https://usehooks.com/useHistory/) by [@gragland](https://github.com/gragland)
+- [useTimeTravel](https://frontarm.com/swyx/reusable-time-travel-react-hooks-immer/) by [@sw-yx](https://github.com/sw-yx)
+
 ## Roadmap
 
 - Document browser compatibility.
