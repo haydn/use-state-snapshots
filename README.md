@@ -116,6 +116,7 @@ the [useState documentation](https://reactjs.org/docs/hooks-reference.html#funct
 
 ## Alternatives
 
+- [use-simple-undo](https://github.com/sandiiarov/use-simple-undo) by [@sandiiarov](https://github.com/sandiiarov)
 - [use-state-history](https://github.com/carlomartinucci/use-state-history) by [@carlomartinucci](https://github.com/carlomartinucci)
 - [use-undo](https://github.com/xxhomey19/use-undo) by [@xxhomey19](https://github.com/xxhomey19)
 - [useHistory](https://codesandbox.io/s/yv3004lqnj) by [@juice49](https://github.com/juice49)
