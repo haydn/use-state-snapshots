@@ -1,10 +1,20 @@
-# useStateSnapshots
+<div align="center">
+  <p>
+    <img src="logo.png" alt="" width="160" />
+  </p>
+  <h1>useStateSnapshots</h1>
+  <p>A React hook to keep track of state changes for undo/redo functionality.</p>
+  <p>
+    <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/min/use-state-snapshots.svg">
+    <img alt="npm" src="https://img.shields.io/npm/dw/use-state-snapshots.svg">
+  </p>
+</div>
 
-A React hook to keep track of state changes for undo/redo functionality.
+## Demo
 
-![](./screenshot.png)
+https://codesandbox.io/s/use-state-snapshots-i6fuq
 
-Demo: https://codesandbox.io/s/peaceful-rgb-i6fuq
+![](screenshot.png)
 
 ## Features
 

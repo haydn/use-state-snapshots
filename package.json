@@ -2,6 +2,15 @@
   "name": "use-state-snapshots",
   "version": "0.0.2",
   "description": "A React hook to keep track of state changes for undo/redo functionality.",
+  "repository": "github:haydn/use-state-snapshots",
+  "keywords": [
+    "react",
+    "hook",
+    "react-hook",
+    "react hooks",
+    "undo",
+    "history"
+  ],
   "main": "index.js",
   "author": "Haydn Ewers",
   "license": "MIT",
