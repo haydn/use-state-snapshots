@@ -28,13 +28,7 @@ https://codesandbox.io/s/use-state-snapshots-i6fuq
 - Flow and TypeScript declarations included.
 - Zero dependencies.
 
-## Install
-
-NPM:
-
-```shell
-npm install use-state-snapshots
-```
+## Installation
 
 Yarn:
 
@@ -42,7 +36,13 @@ Yarn:
 yarn add use-state-snapshots
 ```
 
-## Basic Usage
+NPM:
+
+```shell
+npm install use-state-snapshots
+```
+
+## Usage
 
 ```jsx
 import React from "react";
