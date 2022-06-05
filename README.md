@@ -44,7 +44,7 @@ npm install use-state-snapshots
 
 ## Usage
 
-```jsx
+```js
 import React from "react";
 import useStateSnapshots from "use-state-snapshots";
 
@@ -136,5 +136,6 @@ the [useState documentation](https://reactjs.org/docs/hooks-reference.html#funct
 ## Roadmap
 
 - Document browser compatibility.
+- Include UMD and ESM builds.
 - Add tests.
 - Create a `useReducerSnapshots` hook.
